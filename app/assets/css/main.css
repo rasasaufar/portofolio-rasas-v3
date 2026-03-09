@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply font-sans bg-cyber-bg text-gray-300 antialiased min-h-screen selection:bg-cyber-purple selection:text-white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-cyber-surface;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-cyber-purple/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-cyber-purple;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-cyber-panel backdrop-blur-md border border-cyber-purple/30 rounded-lg shadow-[0_0_15px_rgba(183,33,255,0.1)] hover:shadow-[0_0_20px_rgba(183,33,255,0.3)] transition-all duration-300;
+  }
+
+  .glass-card-solid {
+    @apply bg-cyber-surface border border-cyber-purple/50 rounded-lg shadow-[0_0_10px_rgba(183,33,255,0.2)];
+  }
+
+  .section-title {
+    @apply text-3xl md:text-5xl font-display font-bold text-white mb-2 uppercase tracking-wide tracking-widest drop-shadow-[0_0_8px_rgba(183,33,255,0.8)];
+  }
+
+  .section-subtitle {
+    @apply text-base md:text-lg font-mono text-cyber-cyan mb-10 tracking-widest uppercase text-sm drop-shadow-[0_0_5px_rgba(0,243,255,0.5)];
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-cyber-purple/20 border border-cyber-purple text-white font-display font-bold uppercase tracking-widest rounded-sm hover:bg-cyber-purple hover:text-white transition-all duration-300 shadow-[0_0_10px_rgba(183,33,255,0.3)] hover:shadow-[0_0_20px_rgba(183,33,255,0.8)] hover:animate-glow-pulse;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 border border-cyber-cyan text-cyber-cyan font-display font-medium uppercase tracking-widest rounded-sm hover:bg-cyber-cyan/10 hover:shadow-[0_0_15px_rgba(0,243,255,0.4)] transition-all duration-300;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 text-xs font-mono rounded-sm border border-cyber-purple/50 bg-cyber-purple/10 text-cyber-purple shadow-[0_0_5px_rgba(183,33,255,0.3)];
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:border-cyber-cyan;
+  }
+}
+
+/* Animate on scroll */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Cyber grid background */
+.bg-gradient-mesh {
+  background-color: #050505;
+  background-image: 
+    linear-gradient(to right, rgba(183, 33, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(183, 33, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}

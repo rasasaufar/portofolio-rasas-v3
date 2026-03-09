@@ -1,0 +1,20 @@
+
+> build
+> nuxt build
+
+┌  [36mBuilding Nuxt for production...[39m
+│
+●  [32mNuxt [1m4.3.1[22m[39m[90m (with [39m[90mNitro [1m2.13.1[22m[39m[90m, Vite [1m7.3.1[22m[39m[90m and Vue [1m3.5.29[22m[39m[90m)[39m
+[90m[[90mnuxt:tailwindcss[90m][39m [36mℹ[39m Using default Tailwind CSS file
+│
+●  Nitro preset: [36mnode-server[39m
+[36mℹ[39m Building client...
+[36mℹ[39m [36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+[36mℹ[39m transforming...
+[36mℹ[39m [32m✓[39m 133 modules transformed.
+
+[41m[30m ERROR [39m[49m [31m✗[39m Build failed in 1.51s
+
+│
+■  Nuxt build error: RollupError: [31m[vite:vue] [plugin vite:vue] app/components/AppFooter.vue (63:17): Element is missing end tag.[39m
+│  file: [36mC:/portofolio-rasas/app/components/AppFooter.vue:63:17[39m

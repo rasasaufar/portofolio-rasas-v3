@@ -1,0 +1,15 @@
+<template>
+  <div class="min-h-screen transition-colors duration-500 bg-gradient-mesh">
+    <AppNavbar />
+    <main>
+      <NuxtPage />
+    </main>
+    <AppFooter />
+  </div>
+</template>
+
+<script setup lang="ts">
+useHead({
+  titleTemplate: '%s | Rasas Portfolio',
+})
+</script>
