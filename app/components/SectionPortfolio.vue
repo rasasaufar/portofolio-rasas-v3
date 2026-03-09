@@ -40,7 +40,7 @@
             <div class="flex flex-col md:flex-row gap-6">
               <!-- Company Info -->
               <div class="md:w-1/3 space-y-3">
-                <div v-if="exp.logo" class="w-16 h-16 bg-cyber-bg border border-cyber-cyan flex items-center justify-center p-2 shadow-[0_0_10px_rgba(0,243,255,0.3)]">
+                <div v-if="exp.logo" class="w-16 h-16 bg-white border border-cyber-cyan flex items-center justify-center p-2 shadow-[0_0_10px_rgba(0,243,255,0.3)]">
                   <img :src="exp.logo" :alt="exp.company" class="w-full h-full object-contain filter grayscale group-hover/card:grayscale-0 transition-all duration-500" />
                 </div>
                 <div v-else class="w-16 h-16 bg-cyber-purple/10 border border-cyber-purple flex items-center justify-center text-cyber-cyan drop-shadow-[0_0_5px_currentColor]">
