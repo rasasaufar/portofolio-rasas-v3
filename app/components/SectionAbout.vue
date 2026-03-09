@@ -166,7 +166,7 @@
 
 <script setup lang="ts">
 const stats = [
-  { value: '1+', label: 'Years Exp.' },
+  { value: '2+', label: 'Years Exp.' },
   { value: '5+', label: 'Projects' },
   { value: '1', label: 'Publications' },
 ]

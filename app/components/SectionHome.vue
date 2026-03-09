@@ -72,7 +72,7 @@
                 </span>
                 <div>
                   <p class="text-xs font-mono text-gray-400 uppercase tracking-widest">Uptime</p>
-                  <p class="text-sm font-mono font-bold text-cyber-purple">1+ Years</p>
+                  <p class="text-sm font-mono font-bold text-cyber-purple">2+ Years</p>
                 </div>
               </div>
             </div>
