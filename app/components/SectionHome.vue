@@ -10,7 +10,7 @@
         <div class="space-y-6 animate-fade-in-left" style="animation-delay: 0.2s">
           <div class="inline-flex items-center gap-2 px-4 py-2 bg-cyber-purple/10 border border-cyber-purple/30 shadow-[0_0_10px_rgba(183,33,255,0.2)]">
             <span class="w-2 h-2 rounded-none bg-cyber-cyan animate-pulse shadow-[0_0_5px_rgba(0,243,255,0.8)]"></span>
-            <span class="text-xs font-mono text-cyber-cyan uppercase tracking-widest">Available for Opportunities</span>
+            <span class="text-xs font-mono text-cyber-cyan uppercase tracking-widest">Available for Opportunities.</span>
           </div>
 
           <div class="space-y-3">
