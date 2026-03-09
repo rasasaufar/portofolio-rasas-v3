@@ -11,6 +11,6 @@
 
 <script setup lang="ts">
 useHead({
-  titleTemplate: '%s | Rasas Portfolio',
+  titleTemplate: 'Rasas Portfolio',
 })
 </script>
