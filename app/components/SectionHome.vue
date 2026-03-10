@@ -16,7 +16,7 @@
           <div class="space-y-3">
             <p class="text-lg font-mono text-cyber-pink uppercase tracking-widest">> INIT_USER:</p>
             <h1 class="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-white uppercase tracking-wider drop-shadow-[0_0_10px_rgba(183,33,255,0.5)]">
-              Rasas Ganteng
+              Rasas Aufar
             </h1>
             <h2 class="text-2xl sm:text-3xl font-mono font-light text-cyber-cyan uppercase tracking-widest border-l-4 border-cyber-purple pl-4">
               IT Implementation Professional
