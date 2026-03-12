@@ -44,50 +44,54 @@
           </div>
         </div>
 
-        <!-- Right: Photo -->
+        <!-- Right: Photo with cyberpunk treatment -->
         <div class="flex justify-center lg:justify-end animate-fade-in-right" style="animation-delay: 0.4s">
           <div class="relative">
-            <!-- Decorative rings -->
-            <div class="absolute -inset-4 rounded-full border border-cyber-cyan/30 border-dashed animate-[spin_20s_linear_infinite]"></div>
-            <div class="absolute -inset-8 rounded-full border border-cyber-purple/20 animate-[spin_30s_linear_infinite_reverse]"></div>
+            <!-- Outer decorative ring (dashed, slow spin) -->
+            <div class="absolute -inset-6 border border-dashed border-cyber-purple/20 animate-spin-slow" style="clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));"></div>
+            <!-- Inner decorative ring -->
+            <div class="absolute -inset-3 border border-cyber-cyan/10 animate-spin-slower" style="animation-direction: reverse;"></div>
 
-            <!-- Photo Container -->
-            <div class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-2 border-cyber-cyan shadow-[0_0_30px_rgba(0,243,255,0.2)]">
+            <!-- Photo Container — hexagonal cut -->
+            <div class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 overflow-hidden border-2 border-cyber-purple crt-overlay" style="clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); box-shadow: 0 0 40px rgba(183, 33, 255, 0.3), inset 0 0 40px rgba(0, 0, 0, 0.6);">
               <img
                 src="/images/profile.png"
                 alt="Rasas - Profile Photo"
-                class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-500"
+                class="w-full h-full object-cover filter grayscale-[70%] hover:grayscale-0 transition-all duration-700 scale-110"
               />
-              <!-- Overlay gradient -->
-              <div class="absolute inset-0 bg-gradient-to-t from-cyber-purple/40 to-transparent mix-blend-overlay"></div>
-              <!-- Scanline effect overlay -->
-              <div class="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.2)_50%)] bg-[length:100%_4px] pointer-events-none"></div>
+              <!-- Purple gradient overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-cyber-purple/50 via-transparent to-cyber-bg/30 mix-blend-overlay"></div>
             </div>
 
-            <!-- Floating Badge -->
-            <div class="absolute bottom-4 -right-4 bg-cyber-panel border border-cyber-purple px-4 py-3 shadow-[0_0_15px_rgba(183,33,255,0.3)] animate-float backdrop-blur-md">
+            <!-- Floating Badge — Uptime -->
+            <div class="absolute -bottom-2 -right-6 bg-cyber-bg/90 backdrop-blur-md border border-cyber-purple/50 px-5 py-3 animate-float clip-cyber-sm" style="box-shadow: 0 0 20px rgba(183, 33, 255, 0.3);">
               <div class="flex items-center gap-3">
-                <span class="text-cyber-cyan drop-shadow-[0_0_5px_currentColor]">
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span class="text-cyber-cyan" style="filter: drop-shadow(0 0 5px currentColor);">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 </span>
                 <div>
-                  <p class="text-xs font-mono text-gray-400 uppercase tracking-widest">Uptime</p>
-                  <p class="text-sm font-mono font-bold text-cyber-purple">2+ Years</p>
+                  <p class="text-[9px] font-mono text-gray-500 uppercase tracking-[0.2em]">Uptime</p>
+                  <p class="text-sm font-mono font-bold text-cyber-purple text-glow-purple">2+ Years</p>
                 </div>
               </div>
             </div>
 
-            <!-- Floating Badge 2 -->
-            <div class="absolute top-4 -left-4 bg-cyber-panel border border-cyber-cyan px-4 py-3 shadow-[0_0_15px_rgba(0,243,255,0.3)] animate-float" style="animation-delay: 2s">
+            <!-- Floating Badge — Tasks -->
+            <div class="absolute -top-2 -left-6 bg-cyber-bg/90 backdrop-blur-md border border-cyber-cyan/50 px-5 py-3 animate-float clip-cyber-sm" style="animation-delay: 2s; box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);">
               <div class="flex items-center gap-3">
-                <span class="text-cyber-purple drop-shadow-[0_0_5px_currentColor]">
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                <span class="text-cyber-purple" style="filter: drop-shadow(0 0 5px currentColor);">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                 </span>
                 <div>
-                  <p class="text-xs font-mono text-gray-400 uppercase tracking-widest">Tasks</p>
-                  <p class="text-sm font-mono font-bold text-cyber-cyan">5+ Complete</p>
+                  <p class="text-[9px] font-mono text-gray-500 uppercase tracking-[0.2em]">Tasks</p>
+                  <p class="text-sm font-mono font-bold text-cyber-cyan text-glow-cyan">5+ Complete</p>
                 </div>
               </div>
+            </div>
+
+            <!-- Decorative data text near photo -->
+            <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 text-[8px] font-mono text-cyber-purple/30 tracking-[0.3em] whitespace-nowrap">
+              NODE.ID//0xRA5A5 — SECTOR.07
             </div>
           </div>
         </div>

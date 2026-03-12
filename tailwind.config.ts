@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin'
 
 export default <Config>{
     content: [
@@ -36,6 +37,8 @@ export default <Config>{
                 'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
                 'glitch': 'glitch 2s linear infinite',
                 'glow-pulse': 'glowPulse 2s infinite',
+                'spin-slow': 'spin 20s linear infinite',
+                'spin-slower': 'spin 30s linear infinite',
             },
             keyframes: {
                 fadeIn: {
@@ -78,5 +81,28 @@ export default <Config>{
             },
         },
     },
-    plugins: [],
+    plugins: [
+        plugin(function({ addUtilities }) {
+            addUtilities({
+                /* Clip-path cut corners */
+                '.clip-cyber': {
+                    'clip-path': 'polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px))',
+                },
+                '.clip-cyber-sm': {
+                    'clip-path': 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))',
+                },
+                '.clip-cyber-lg': {
+                    'clip-path': 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))',
+                },
+
+                /* Neon glow text */
+                '.text-glow-purple': {
+                    'text-shadow': '0 0 7px rgba(183, 33, 255, 0.8), 0 0 15px rgba(183, 33, 255, 0.4), 0 0 30px rgba(183, 33, 255, 0.2)',
+                },
+                '.text-glow-cyan': {
+                    'text-shadow': '0 0 7px rgba(0, 243, 255, 0.8), 0 0 15px rgba(0, 243, 255, 0.4), 0 0 30px rgba(0, 243, 255, 0.2)',
+                },
+            })
+        }),
+    ],
 }
