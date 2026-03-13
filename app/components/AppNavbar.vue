@@ -1,14 +1,14 @@
 <template>
   <nav
-    class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-cyber-purple/20"
-    :class="scrolled ? 'bg-cyber-bg/95 backdrop-blur-md shadow-[0_0_20px_rgba(183,33,255,0.2)] border-cyber-purple/50' : 'bg-cyber-bg/50 backdrop-blur-sm'"
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-cyber-light-border dark:border-cyber-purple/20"
+    :class="scrolled ? 'bg-cyber-light-surface/95 dark:bg-cyber-bg/95 backdrop-blur-md shadow-[0_0_20px_#cbd5e1] dark:shadow-[0_0_20px_rgba(183,33,255,0.2)] border-cyber-light-border dark:border-cyber-purple/50' : 'bg-cyber-light-bg/50 dark:bg-cyber-bg/50 backdrop-blur-sm'"
   >
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 md:h-20">
         <!-- Logo -->
         <a href="#home" class="flex items-center gap-2 group" @click.prevent="scrollToSection('home')">
           <!-- Logo Typography -->
-          <span class="text-2xl font-display font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyber-cyan via-cyber-purple to-cyber-pink drop-shadow-[0_0_8px_rgba(183,33,255,0.8)] animate-pulse hover:animate-glitch transition-all duration-300 uppercase">
+          <span class="text-2xl font-display font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyber-cyan via-cyber-purple to-cyber-pink shadow-none dark:drop-shadow-[0_0_8px_rgba(183,33,255,0.8)] animate-pulse hover:animate-glitch transition-all duration-300 uppercase">
             rasasaufar
           </span>
         </a>
@@ -22,19 +22,23 @@
               :href="`#${item.id}`"
               class="px-4 py-2 rounded-sm transition-all duration-300 border border-transparent"
               :class="activeSection === item.id
-                ? 'bg-cyber-purple/20 text-cyber-cyan border-cyber-cyan shadow-[0_0_10px_rgba(0,243,255,0.3)]'
-                : 'text-gray-400 hover:text-cyber-cyan hover:bg-cyber-purple/10 hover:border-cyber-purple/50'"
+                ? 'bg-cyber-light-panel dark:bg-cyber-purple/20 text-cyber-purple dark:text-cyber-cyan border-cyber-light-border dark:border-cyber-cyan shadow-[0_0_10px_#cbd5e1] dark:shadow-[0_0_10px_rgba(0,243,255,0.3)]'
+                : 'text-gray-600 dark:text-gray-400 hover:text-cyber-purple dark:hover:text-cyber-cyan hover:bg-cyber-light-panel dark:hover:bg-cyber-purple/10 hover:border-cyber-light-border dark:hover:border-cyber-purple/50'"
               @click.prevent="scrollToSection(item.id)"
             >
               <span class="text-cyber-purple mr-1 opacity-70">></span>{{ item.label }}
             </a>
           </div>
+          <div class="ml-4 border-l border-cyber-light-border dark:border-cyber-purple/30 pl-4">
+             <ThemeToggle />
+          </div>
         </div>
 
         <!-- Mobile Menu Button -->
         <div class="flex items-center gap-2 md:hidden">
+          <ThemeToggle class="mr-2" />
           <button
-            class="p-2 rounded-sm border border-cyber-purple/30 text-cyber-purple hover:bg-cyber-purple/20 hover:text-cyber-cyan hover:border-cyber-cyan transition-colors hover:shadow-[0_0_10px_rgba(0,243,255,0.3)]"
+            class="p-2 rounded-sm border border-cyber-light-border dark:border-cyber-purple/30 text-cyber-purple hover:bg-cyber-light-panel dark:hover:bg-cyber-purple/20 hover:text-cyber-purple dark:hover:text-cyber-cyan hover:border-cyber-light-border dark:hover:border-cyber-cyan transition-colors dark:hover:shadow-[0_0_10px_rgba(0,243,255,0.3)]"
             @click="mobileOpen = !mobileOpen"
           >
             <svg v-if="!mobileOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -59,7 +63,7 @@
     >
       <div
         v-if="mobileOpen"
-        class="md:hidden bg-cyber-surface/95 backdrop-blur-xl border-b border-cyber-purple/50 shadow-[0_10px_20px_rgba(183,33,255,0.2)]"
+        class="md:hidden bg-cyber-light-surface/95 dark:bg-cyber-surface/95 backdrop-blur-xl border-b border-cyber-light-border dark:border-cyber-purple/50 shadow-[0_10px_20px_#cbd5e1] dark:shadow-[0_10px_20px_rgba(183,33,255,0.2)]"
       >
         <div class="px-4 py-3 space-y-1 font-mono uppercase text-sm tracking-wider">
           <a
@@ -68,8 +72,8 @@
             :href="`#${item.id}`"
             class="block px-4 py-3 rounded-sm transition-all duration-300 border-l-2"
             :class="activeSection === item.id
-              ? 'bg-cyber-purple/20 text-cyber-cyan border-cyber-cyan'
-              : 'border-transparent text-gray-400 hover:text-cyber-cyan hover:bg-cyber-purple/10 hover:border-cyber-purple/50'"
+              ? 'bg-cyber-light-panel dark:bg-cyber-purple/20 text-cyber-purple dark:text-cyber-cyan border-cyber-light-border dark:border-cyber-cyan'
+              : 'border-transparent text-gray-600 dark:text-gray-400 hover:text-cyber-purple dark:hover:text-cyber-cyan hover:bg-cyber-light-panel dark:hover:bg-cyber-purple/10 hover:border-cyber-light-border dark:hover:border-cyber-purple/50'"
             @click.prevent="scrollToSection(item.id); mobileOpen = false"
           >
             <span class="text-cyber-purple mr-2 opacity-70">>></span>{{ item.label }}

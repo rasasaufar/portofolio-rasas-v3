@@ -11,10 +11,10 @@
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-10">
         <!-- Profile Summary -->
         <div class="lg:col-span-3 animate-on-scroll">
-          <div class="bg-cyber-panel border border-cyber-purple/50 p-8 space-y-6 h-full shadow-[0_0_15px_rgba(183,33,255,0.1)] relative overflow-hidden group">
+          <div class="bg-cyber-light-panel dark:bg-cyber-panel border border-cyber-light-border dark:border-cyber-purple/50 p-8 space-y-6 h-full shadow-[4px_4px_0px_#cbd5e1] dark:shadow-[0_0_15px_rgba(183,33,255,0.1)] relative overflow-hidden group">
             <div class="absolute top-0 right-0 w-32 h-32 bg-cyber-purple/10 blur-3xl rounded-full group-hover:bg-cyber-purple/20 transition-colors duration-500"></div>
             
-            <h3 class="text-xl font-display font-bold text-white flex items-center gap-3 uppercase tracking-wider relative z-10">
+            <h3 class="text-xl font-display font-bold text-cyber-light-text dark:text-white flex items-center gap-3 uppercase tracking-wider relative z-10">
               <span class="w-8 h-8 bg-cyber-purple/20 border border-cyber-purple flex items-center justify-center">
                 <svg class="w-4 h-4 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -23,7 +23,7 @@
               Who I Am
             </h3>
 
-            <div class="space-y-4 font-mono text-sm text-gray-300 leading-relaxed relative z-10">
+            <div class="space-y-4 font-mono text-sm text-cyber-light-text dark:text-gray-300 leading-relaxed relative z-10">
               <p>
                 > A Computer Science graduate currently pursuing a career as an IT Implementor with specialized capabilities in IT Infrastructure and Data Analysis. Possesses a robust technical foundation in integrating technology solutions, ensuring systems align with operational requirements, and leveraging data-driven insights to support strategic decision-making.
               </p>
@@ -37,11 +37,11 @@
 
             <!-- Stats -->
             <div class="grid grid-cols-3 gap-4 pt-6 relative z-10">
-              <div v-for="stat in stats" :key="stat.label" class="text-center p-3 border border-cyber-cyan/30 bg-cyber-bg/50 hover:border-cyber-cyan hover:shadow-[0_0_10px_rgba(0,243,255,0.2)] transition-all duration-300">
-                <p class="text-2xl font-display font-bold text-cyber-cyan drop-shadow-[0_0_5px_rgba(0,243,255,0.5)]">
+              <div v-for="stat in stats" :key="stat.label" class="text-center p-3 border border-cyber-light-border dark:border-cyber-cyan/30 bg-cyber-light-surface/50 dark:bg-cyber-bg/50 hover:border-cyber-purple dark:hover:border-cyber-cyan hover:shadow-[4px_4px_0px_#e2e8f0] dark:hover:shadow-[0_0_10px_rgba(0,243,255,0.2)] transition-all duration-300">
+                <p class="text-2xl font-display font-bold text-cyber-purple dark:text-cyber-cyan drop-shadow-none dark:drop-shadow-[0_0_5px_rgba(0,243,255,0.5)]">
                   {{ stat.value }}
                 </p>
-                <p class="text-xs font-mono text-gray-400 mt-1 uppercase tracking-widest">{{ stat.label }}</p>
+                <p class="text-xs font-mono text-gray-500 dark:text-gray-400 mt-1 uppercase tracking-widest">{{ stat.label }}</p>
               </div>
             </div>
           </div>
@@ -49,11 +49,11 @@
 
         <!-- Contact Me -->
         <div class="lg:col-span-2 animate-on-scroll" style="animation-delay: 0.2s">
-          <div class="bg-cyber-panel border border-cyber-cyan/50 p-8 space-y-6 h-full shadow-[0_0_15px_rgba(0,243,255,0.1)] relative overflow-hidden group">
+          <div class="bg-cyber-light-panel dark:bg-cyber-panel border border-cyber-light-border dark:border-cyber-cyan/50 p-8 space-y-6 h-full shadow-[4px_4px_0px_#cbd5e1] dark:shadow-[0_0_15px_rgba(0,243,255,0.1)] relative overflow-hidden group">
             <div class="absolute bottom-0 left-0 w-32 h-32 bg-cyber-cyan/10 blur-3xl rounded-full group-hover:bg-cyber-cyan/20 transition-colors duration-500"></div>
 
-            <h3 class="text-xl font-display font-bold text-white flex items-center gap-3 uppercase tracking-wider relative z-10">
-              <span class="w-8 h-8 bg-cyber-cyan/20 border border-cyber-cyan flex items-center justify-center">
+            <h3 class="text-xl font-display font-bold text-cyber-light-text dark:text-white flex items-center gap-3 uppercase tracking-wider relative z-10">
+              <span class="w-8 h-8 bg-cyber-light-surface dark:bg-cyber-cyan/20 border border-cyber-light-border dark:border-cyber-cyan flex items-center justify-center">
                 <svg class="w-4 h-4 text-cyber-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
@@ -61,7 +61,7 @@
               Contact Me
             </h3>
 
-            <p class="text-gray-400 font-mono text-xs uppercase tracking-widest relative z-10">
+            <p class="text-gray-500 dark:text-gray-400 font-mono text-xs uppercase tracking-widest relative z-10">
               > Open Communications Channel...
             </p>
 
@@ -72,18 +72,18 @@
                 :href="contact.url"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex items-center gap-4 p-4 border border-cyber-purple/30 bg-cyber-bg/50 hover:bg-cyber-purple/10 hover:border-cyber-purple hover:-translate-x-1 hover:shadow-[0_0_15px_rgba(183,33,255,0.2)] transition-all duration-300 group/contact"
+                class="flex items-center gap-4 p-4 border border-cyber-light-border dark:border-cyber-purple/30 bg-cyber-light-surface/50 dark:bg-cyber-bg/50 hover:bg-cyber-light-panel dark:hover:bg-cyber-purple/10 hover:border-cyber-purple hover:-translate-x-1 hover:shadow-[4px_4px_0px_#e2e8f0] dark:hover:shadow-[0_0_15px_rgba(183,33,255,0.2)] transition-all duration-300 group/contact"
               >
                 <div
-                  class="w-10 h-10 flex items-center justify-center border border-transparent group-hover/contact:border-cyber-cyan transition-colors duration-300"
+                  class="w-10 h-10 flex items-center justify-center border border-transparent group-hover/contact:border-cyber-purple dark:group-hover/contact:border-cyber-cyan transition-colors duration-300"
                 >
-                  <span v-html="contact.icon" class="w-5 h-5 text-cyber-cyan drop-shadow-[0_0_5px_currentColor]"></span>
+                  <span v-html="contact.icon" class="w-5 h-5 text-cyber-purple dark:text-cyber-cyan drop-shadow-none dark:drop-shadow-[0_0_5px_currentColor]"></span>
                 </div>
                 <div class="flex-1">
-                  <p class="text-sm font-display font-bold uppercase tracking-widest text-gray-300 group-hover/contact:text-cyber-cyan transition-colors">{{ contact.name }}</p>
+                  <p class="text-sm font-display font-bold uppercase tracking-widest text-cyber-light-text dark:text-gray-300 group-hover/contact:text-cyber-purple dark:group-hover/contact:text-cyber-cyan transition-colors">{{ contact.name }}</p>
                   <p class="text-xs font-mono text-gray-500">{{ contact.handle }}</p>
                 </div>
-                <svg class="w-4 h-4 text-gray-600 group-hover/contact:text-cyber-cyan group-hover/contact:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 text-gray-400 dark:text-gray-600 group-hover/contact:text-cyber-purple dark:group-hover/contact:text-cyber-cyan group-hover/contact:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                 </svg>
               </a>
@@ -94,12 +94,12 @@
 
       <!-- Education Section -->
       <div class="mt-12 animate-on-scroll" style="animation-delay: 0.3s">
-        <div class="bg-cyber-panel border border-cyber-purple/50 p-8 shadow-[0_0_15px_rgba(183,33,255,0.1)] relative overflow-hidden">
+        <div class="bg-cyber-light-panel dark:bg-cyber-panel border border-cyber-light-border dark:border-cyber-purple/50 p-8 shadow-[4px_4px_0px_#cbd5e1] dark:shadow-[0_0_15px_rgba(183,33,255,0.1)] relative overflow-hidden">
           <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,rgba(183,33,255,0.02)_10px,rgba(183,33,255,0.02)_20px)] pointer-events-none"></div>
           
-          <h3 class="text-xl font-display font-bold text-white flex items-center gap-3 mb-8 uppercase tracking-wider relative z-10">
-            <span class="w-8 h-8 bg-cyber-purple/20 border border-cyber-purple flex items-center justify-center">
-              <svg class="w-4 h-4 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <h3 class="text-xl font-display font-bold text-cyber-light-text dark:text-white flex items-center gap-3 mb-8 uppercase tracking-wider relative z-10">
+            <span class="w-8 h-8 bg-cyber-light-surface dark:bg-cyber-purple/20 border border-cyber-light-border dark:border-cyber-purple flex items-center justify-center">
+              <svg class="w-4 h-4 text-cyber-purple dark:text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
@@ -116,32 +116,32 @@
                 class="relative pl-[4.5rem] group"
               >
                 <!-- Timeline Line (only if not last item) -->
-                <div v-if="index !== education.length - 1" class="absolute left-[27px] top-14 -bottom-10 w-px bg-cyber-purple/50 shadow-[0_0_5px_rgba(183,33,255,0.8)]"></div>
+                <div v-if="index !== education.length - 1" class="absolute left-[27px] top-14 -bottom-10 w-px bg-cyber-light-border dark:bg-cyber-purple/50 dark:shadow-[0_0_5px_rgba(183,33,255,0.8)]"></div>
 
                 <!-- Timeline Dot -->
-                <div class="absolute left-0 top-1 w-14 h-14 bg-cyber-bg border border-cyber-cyan flex items-center justify-center group-hover:shadow-[0_0_15px_rgba(0,243,255,0.5)] group-hover:scale-105 transition-all duration-300 z-10 overflow-hidden p-1.5">
+                <div class="absolute left-0 top-1 w-14 h-14 bg-cyber-light-surface dark:bg-cyber-bg border border-cyber-light-border dark:border-cyber-cyan flex items-center justify-center group-hover:border-cyber-purple dark:group-hover:border-cyber-cyan group-hover:shadow-[0_0_10px_#cbd5e1] dark:group-hover:shadow-[0_0_15px_rgba(0,243,255,0.5)] group-hover:scale-105 transition-all duration-300 z-10 overflow-hidden p-1.5">
                   <img :src="edu.logo" :alt="edu.institution" class="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300" />
                 </div>
 
                 <!-- Education Card -->
-                <div class="p-5 bg-cyber-bg/50 border border-cyber-purple/30 hover:bg-cyber-purple/10 hover:border-cyber-purple transition-all duration-300 group flex flex-col relative overflow-hidden">
+                <div class="p-5 bg-cyber-light-surface/50 dark:bg-cyber-bg/50 border border-cyber-light-border dark:border-cyber-purple/30 hover:bg-cyber-light-surface dark:hover:bg-cyber-purple/10 hover:border-cyber-purple transition-all duration-300 group flex flex-col relative overflow-hidden">
                   <!-- Decorative corner mark -->
-                  <div class="absolute top-0 right-0 w-3 h-3 border-t border-r border-cyber-cyan opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div class="absolute top-0 right-0 w-3 h-3 border-t border-r border-cyber-purple dark:border-cyber-cyan opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   
                   <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                     <div>
-                      <h4 class="font-display font-bold uppercase tracking-wider text-white group-hover:text-cyber-cyan transition-colors drop-shadow-[0_0_2px_rgba(0,0,0,1)]">{{ edu.degree }}</h4>
-                      <p class="text-xs font-mono text-cyber-purple uppercase tracking-widest mt-1">> {{ edu.institution }}</p>
+                      <h4 class="font-display font-bold uppercase tracking-wider text-cyber-light-text dark:text-white group-hover:text-cyber-purple dark:group-hover:text-cyber-cyan transition-colors drop-shadow-none dark:drop-shadow-[0_0_2px_rgba(0,0,0,1)]">{{ edu.degree }}</h4>
+                      <p class="text-xs font-mono text-gray-500 dark:text-cyber-purple uppercase tracking-widest mt-1">> {{ edu.institution }}</p>
                     </div>
                     <div class="flex flex-wrap items-center gap-3 flex-shrink-0">
-                      <span v-if="edu.gpa" class="px-2 py-1 text-xs font-mono border border-cyber-purple text-cyber-cyan shadow-[0_0_5px_rgba(183,33,255,0.2)]">
+                      <span v-if="edu.gpa" class="px-2 py-1 text-xs font-mono border border-cyber-light-border dark:border-cyber-purple text-cyber-purple dark:text-cyber-cyan shadow-[2px_2px_0px_#e2e8f0] dark:shadow-[0_0_5px_rgba(183,33,255,0.2)]">
                         GPA: {{ edu.gpa }}
                       </span>
                       <span class="text-xs font-mono text-gray-500 uppercase tracking-widest">[{{ edu.period }}]</span>
                     </div>
                   </div>
 
-                  <p v-if="edu.description" class="text-xs font-mono text-gray-400 mt-4 leading-relaxed border-l-2 border-cyber-purple/30 pl-3">
+                  <p v-if="edu.description" class="text-xs font-mono text-gray-600 dark:text-gray-400 mt-4 leading-relaxed border-l-2 border-cyber-light-border dark:border-cyber-purple/30 pl-3">
                     {{ edu.description }}
                   </p>
 
@@ -149,7 +149,7 @@
                     <span
                       v-for="highlight in edu.highlights"
                       :key="highlight"
-                      class="px-2 py-1 text-[10px] font-mono uppercase bg-transparent border border-cyber-cyan/30 text-cyber-cyan/80"
+                      class="px-2 py-1 text-[10px] font-mono uppercase bg-transparent border border-cyber-light-border dark:border-cyber-cyan/30 text-cyber-purple dark:text-cyber-cyan/80"
                     >
                       #{{ highlight }}
                     </span>

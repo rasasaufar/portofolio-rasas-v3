@@ -19,30 +19,30 @@
         <div
           v-for="(pub, index) in publications"
           :key="pub.title"
-          class="bg-cyber-panel border border-cyber-purple/40 p-6 md:p-8 hover:border-cyber-cyan transition-all duration-300 animate-fade-in-up relative group shadow-[0_0_10px_rgba(183,33,255,0.1)] hover:shadow-[0_0_20px_rgba(0,243,255,0.2)]"
+          class="bg-cyber-light-panel dark:bg-cyber-panel border border-cyber-light-border dark:border-cyber-purple/40 p-6 md:p-8 hover:border-cyber-purple dark:hover:border-cyber-cyan transition-all duration-300 animate-fade-in-up relative group shadow-[4px_4px_0px_#cbd5e1] dark:shadow-[0_0_10px_rgba(183,33,255,0.1)] hover:shadow-[4px_4px_0px_#94a3b8] dark:hover:shadow-[0_0_20px_rgba(0,243,255,0.2)]"
           :style="{ animationDelay: `${index * 0.1}s` }"
         >
           <!-- Stylized Corner Accent -->
-          <div class="absolute top-0 left-0 w-4 h-4 border-t border-l border-cyber-cyan opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div class="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-cyber-cyan opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute top-0 left-0 w-4 h-4 border-t border-l border-cyber-purple dark:border-cyber-cyan opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-cyber-purple dark:border-cyber-cyan opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
           <div class="flex gap-6 sm:gap-10 relative relative z-10">
             <!-- Index Number -->
-            <div class="hidden sm:flex flex-shrink-0 w-14 h-14 bg-cyber-bg border border-cyber-cyan items-center justify-center relative z-10 shadow-[0_0_15px_rgba(0,243,255,0.2)] group-hover:shadow-[0_0_25px_rgba(0,243,255,0.4)] transition-shadow duration-300">
-              <span class="absolute -top-1 -right-1 w-2 h-2 bg-cyber-pink animate-pulse"></span>
-              <span class="text-xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-br from-cyber-cyan to-cyber-purple drop-shadow-[0_0_5px_rgba(0,243,255,0.5)]">
+            <div class="hidden sm:flex flex-shrink-0 w-14 h-14 bg-cyber-light-surface dark:bg-cyber-bg border border-cyber-light-border dark:border-cyber-cyan items-center justify-center relative z-10 shadow-none dark:shadow-[0_0_15px_rgba(0,243,255,0.2)] group-hover:shadow-[4px_4px_0px_#cbd5e1] dark:group-hover:shadow-[0_0_25px_rgba(0,243,255,0.4)] transition-shadow duration-300">
+              <span class="absolute -top-1 -right-1 w-2 h-2 bg-cyber-purple dark:bg-cyber-pink animate-pulse"></span>
+              <span class="text-xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-br from-cyber-purple to-cyber-purple dark:from-cyber-cyan dark:to-cyber-purple drop-shadow-none dark:drop-shadow-[0_0_5px_rgba(0,243,255,0.5)]">
                 {{ String(index + 1).padStart(2, '0') }}
               </span>
             </div>
 
             <div class="flex-1 space-y-4">
               <!-- Title -->
-              <h3 class="text-lg font-display font-bold text-white group-hover:text-cyber-cyan transition-colors duration-300 leading-snug drop-shadow-[0_0_2px_rgba(0,0,0,1)] uppercase tracking-wide">
+              <h3 class="text-lg font-display font-bold text-cyber-light-text dark:text-white group-hover:text-cyber-purple dark:group-hover:text-cyber-cyan transition-colors duration-300 leading-snug drop-shadow-none dark:drop-shadow-[0_0_2px_rgba(0,0,0,1)] uppercase tracking-wide">
                 {{ pub.title }}
               </h3>
 
               <!-- Meta -->
-              <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-gray-400 uppercase tracking-widest">
+              <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-gray-500 dark:text-gray-400 uppercase tracking-widest">
                 <span class="flex items-center gap-2">
                   <span class="text-cyber-purple">></span>
                   {{ pub.journal }}
@@ -67,17 +67,17 @@
               </div>
 
               <!-- Authors -->
-              <p class="text-sm font-mono text-gray-400 bg-cyber-bg/50 border-l border-cyber-purple/50 pl-3 py-1">
+              <p class="text-sm font-mono text-gray-600 dark:text-gray-400 bg-cyber-light-surface/50 dark:bg-cyber-bg/50 border-l border-cyber-light-border dark:border-cyber-purple/50 pl-3 py-1">
                 <span class="text-cyber-purple">AUTHORS:</span> {{ pub.authors }}
               </p>
 
               <!-- Abstract -->
-              <p class="text-sm font-mono text-gray-500 leading-relaxed text-justify">> {{ pub.abstract }}</p>
+              <p class="text-sm font-mono text-gray-600 dark:text-gray-500 leading-relaxed text-justify">> {{ pub.abstract }}</p>
 
               <!-- Tags & Link -->
-              <div class="flex items-center justify-between pt-4 mt-2 border-t border-cyber-purple/20">
+              <div class="flex items-center justify-between pt-4 mt-2 border-t border-cyber-light-border dark:border-cyber-purple/20">
                 <div class="flex flex-wrap gap-2">
-                  <span v-for="tag in pub.tags" :key="tag" class="px-1.5 py-0.5 text-[10px] font-mono uppercase border border-cyber-purple/30 text-cyber-purple bg-cyber-purple/5 hover:bg-cyber-purple/20 transition-colors cursor-default">
+                  <span v-for="tag in pub.tags" :key="tag" class="px-1.5 py-0.5 text-[10px] font-mono uppercase border border-cyber-light-border dark:border-cyber-purple/30 text-cyber-light-text dark:text-cyber-purple bg-cyber-light-surface dark:bg-cyber-purple/5 hover:bg-cyber-light-panel dark:hover:bg-cyber-purple/20 transition-colors cursor-default">
                     #{{ tag }}
                   </span>
                 </div>
@@ -87,7 +87,7 @@
                   :href="pub.doi"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex items-center gap-2 text-xs font-mono font-bold text-cyber-cyan hover:text-white transition-colors group/link drop-shadow-[0_0_5px_rgba(0,243,255,0.5)] border border-cyber-cyan/50 px-3 py-1.5 hover:bg-cyber-cyan/20"
+                  class="flex items-center gap-2 text-xs font-mono font-bold text-cyber-purple dark:text-cyber-cyan hover:text-cyber-light-text dark:hover:text-white transition-colors group/link drop-shadow-[2px_2px_0px_#e2e8f0] dark:drop-shadow-[0_0_5px_rgba(0,243,255,0.5)] border border-cyber-light-border dark:border-cyber-cyan/50 px-3 py-1.5 hover:bg-cyber-light-surface dark:hover:bg-cyber-cyan/20"
                 >
                   <span class="blink">READ_DOCUMENT</span>
                   <svg class="w-4 h-4 group-hover/link:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">

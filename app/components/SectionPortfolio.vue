@@ -10,14 +10,14 @@
 
       <!-- Tab Switcher -->
       <div class="flex justify-center mb-12 animate-on-scroll">
-        <div class="inline-flex p-1 bg-cyber-panel border border-cyber-purple/50 shadow-[0_0_15px_rgba(183,33,255,0.2)]">
+        <div class="inline-flex p-1 bg-cyber-light-panel dark:bg-cyber-panel border border-cyber-light-border dark:border-cyber-purple/50 shadow-[4px_4px_0px_#cbd5e1] dark:shadow-[0_0_15px_rgba(183,33,255,0.2)]">
           <button
             v-for="tab in tabs"
             :key="tab.id"
             class="px-6 py-2.5 font-mono uppercase text-sm tracking-widest transition-all duration-300 border border-transparent"
             :class="activeTab === tab.id
-              ? 'bg-cyber-purple/20 text-cyber-cyan border-cyber-cyan shadow-[0_0_10px_rgba(0,243,255,0.3)] inset-0'
-              : 'text-gray-500 hover:text-cyber-purple hover:bg-cyber-purple/5'"
+              ? 'bg-cyber-light-surface dark:bg-cyber-purple/20 text-cyber-purple dark:text-cyber-cyan border-cyber-light-border dark:border-cyber-cyan shadow-[0_0_10px_#cbd5e1] dark:shadow-[0_0_10px_rgba(0,243,255,0.3)] inset-0'
+              : 'text-gray-500 hover:text-cyber-purple hover:bg-cyber-light-surface/50 dark:hover:bg-cyber-purple/5'"
             @click="activeTab = tab.id"
           >
             {{ tab.label }}
@@ -31,26 +31,26 @@
           <div
             v-for="(exp, index) in experiences"
             :key="exp.company"
-            class="bg-cyber-panel border border-cyber-purple/40 p-6 md:p-8 hover:border-cyber-cyan transition-all duration-300 animate-fade-in-up relative overflow-hidden group/card shadow-[0_0_10px_rgba(183,33,255,0.1)] hover:shadow-[0_0_20px_rgba(0,243,255,0.2)]"
+            class="bg-cyber-light-panel dark:bg-cyber-panel border border-cyber-light-border dark:border-cyber-purple/40 p-6 md:p-8 hover:border-cyber-purple dark:hover:border-cyber-cyan transition-all duration-300 animate-fade-in-up relative overflow-hidden group/card shadow-[4px_4px_0px_#cbd5e1] dark:shadow-[0_0_10px_rgba(183,33,255,0.1)] hover:shadow-[4px_4px_0px_#94a3b8] dark:hover:shadow-[0_0_20px_rgba(0,243,255,0.2)]"
             :style="{ animationDelay: `${index * 0.1}s` }"
           >
             <!-- Decorative border accent -->
-            <div class="absolute top-0 left-0 w-1 h-full bg-cyber-purple group-hover/card:bg-cyber-cyan transition-colors duration-300 shadow-[0_0_10px_currentColor]"></div>
+            <div class="absolute top-0 left-0 w-1 h-full bg-cyber-purple group-hover/card:bg-cyber-purple dark:group-hover/card:bg-cyber-cyan transition-colors duration-300 shadow-none dark:shadow-[0_0_10px_currentColor]"></div>
 
             <div class="flex flex-col md:flex-row gap-6">
               <!-- Company Info -->
               <div class="md:w-1/3 space-y-3">
-                <div v-if="exp.logo" class="w-16 h-16 bg-white border border-cyber-cyan flex items-center justify-center p-2 shadow-[0_0_10px_rgba(0,243,255,0.3)]">
+                <div v-if="exp.logo" class="w-16 h-16 bg-white border border-cyber-light-border dark:border-cyber-cyan flex items-center justify-center p-2 shadow-none dark:shadow-[0_0_10px_rgba(0,243,255,0.3)]">
                   <img :src="exp.logo" :alt="exp.company" class="w-full h-full object-contain filter grayscale group-hover/card:grayscale-0 transition-all duration-500" />
                 </div>
-                <div v-else class="w-16 h-16 bg-cyber-purple/10 border border-cyber-purple flex items-center justify-center text-cyber-cyan drop-shadow-[0_0_5px_currentColor]">
+                <div v-else class="w-16 h-16 bg-cyber-light-surface dark:bg-cyber-purple/10 border border-cyber-light-border dark:border-cyber-purple flex items-center justify-center text-cyber-purple dark:text-cyber-cyan drop-shadow-none dark:drop-shadow-[0_0_5px_currentColor]">
                   <span class="text-2xl">{{ exp.emoji }}</span>
                 </div>
-                <h3 class="text-lg font-display font-bold text-white uppercase tracking-wider drop-shadow-[0_0_2px_rgba(0,0,0,1)] group-hover/card:text-cyber-cyan transition-colors">{{ exp.company }}</h3>
+                <h3 class="text-lg font-display font-bold text-cyber-light-text dark:text-white uppercase tracking-wider drop-shadow-none dark:drop-shadow-[0_0_2px_rgba(0,0,0,1)] group-hover/card:text-cyber-purple dark:group-hover/card:text-cyber-cyan transition-colors">{{ exp.company }}</h3>
                 <p class="text-sm font-mono text-cyber-purple uppercase tracking-widest">> {{ exp.position }}</p>
-                <p class="text-xs font-mono text-gray-500 uppercase tracking-widest pl-3 border-l-2 border-cyber-cyan/30">[{{ exp.period }}]</p>
+                <p class="text-xs font-mono text-gray-500 uppercase tracking-widest pl-3 border-l-2 border-cyber-light-border dark:border-cyber-cyan/30">[{{ exp.period }}]</p>
                 <div class="flex flex-wrap gap-2 pt-2">
-                  <span v-for="tech in exp.tech" :key="tech" class="px-2 py-0.5 text-[10px] font-mono uppercase border border-cyber-purple/50 text-cyber-cyan bg-cyber-purple/10 shadow-[0_0_5px_rgba(183,33,255,0.2)]">
+                  <span v-for="tech in exp.tech" :key="tech" class="px-2 py-0.5 text-[10px] font-mono uppercase border border-cyber-light-border dark:border-cyber-purple/50 text-cyber-purple dark:text-cyber-cyan bg-cyber-light-surface dark:bg-cyber-purple/10 shadow-[2px_2px_0px_#e2e8f0] dark:shadow-[0_0_5px_rgba(183,33,255,0.2)]">
                     #{{ tech }}
                   </span>
                 </div>
@@ -58,34 +58,34 @@
 
               <!-- Description & Gallery -->
               <div class="md:w-2/3 space-y-4">
-                <p class="font-mono text-sm text-gray-400 leading-relaxed bg-cyber-bg/50 border border-cyber-surface p-4 border-l-2 border-l-cyber-purple shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">{{ exp.description }}</p>
+                <p class="font-mono text-sm text-cyber-light-text dark:text-gray-400 leading-relaxed bg-cyber-light-surface/50 dark:bg-cyber-bg/50 border border-cyber-light-border dark:border-cyber-surface p-4 border-l-2 border-l-cyber-purple shadow-[4px_4px_0px_#e2e8f0] dark:shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">{{ exp.description }}</p>
 
                 <ul class="space-y-2 mt-4 font-mono text-sm">
-                  <li v-for="resp in exp.responsibilities" :key="resp" class="flex items-start gap-2 text-gray-500 group-hover/card:text-gray-400 transition-colors">
-                    <span class="text-cyber-cyan mt-0.5 flex-shrink-0">></span>
+                  <li v-for="resp in exp.responsibilities" :key="resp" class="flex items-start gap-2 text-gray-600 dark:text-gray-500 group-hover/card:text-cyber-light-text dark:group-hover/card:text-gray-400 transition-colors">
+                    <span class="text-cyber-purple dark:text-cyber-cyan mt-0.5 flex-shrink-0">></span>
                     {{ resp }}
                   </li>
                 </ul>
 
                 <!-- Gallery -->
-                <div v-if="exp.gallery && exp.gallery.length > 0" class="pt-4 mt-4 border-t border-cyber-purple/20">
+                <div v-if="exp.gallery && exp.gallery.length > 0" class="pt-4 mt-4 border-t border-cyber-light-border dark:border-cyber-purple/20">
                   <p class="text-[10px] font-mono text-cyber-purple uppercase tracking-widest mb-3 blink">>> ATTACHED_MEDIA</p>
                   <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                     <div
                       v-for="(img, imgIndex) in exp.gallery"
                       :key="imgIndex"
-                      class="relative aspect-video overflow-hidden border border-cyber-cyan/30 hover:border-cyber-cyan transition-all duration-300 group cursor-pointer shadow-[0_0_5px_rgba(0,243,255,0.1)] hover:shadow-[0_0_15px_rgba(0,243,255,0.4)]"
+                      class="relative aspect-video overflow-hidden border border-cyber-light-border dark:border-cyber-cyan/30 hover:border-cyber-purple dark:hover:border-cyber-cyan transition-all duration-300 group cursor-pointer shadow-none dark:shadow-[0_0_5px_rgba(0,243,255,0.1)] hover:shadow-[4px_4px_0px_#cbd5e1] dark:hover:shadow-[0_0_15px_rgba(0,243,255,0.4)]"
                       @click="openGallery(index, imgIndex)"
                     >
                       <img v-if="img.image" :src="img.image" :alt="img.caption" class="w-full h-full object-cover filter brightness-75 group-hover:brightness-110 saturate-50 group-hover:saturate-150 transition-all duration-500" />
-                      <div v-else class="w-full h-full bg-cyber-purple/10 flex items-center justify-center text-cyber-cyan group-hover:text-white transition-colors duration-300">
+                      <div v-else class="w-full h-full bg-cyber-light-surface dark:bg-cyber-purple/10 flex items-center justify-center text-cyber-purple dark:text-cyber-cyan group-hover:text-black dark:group-hover:text-white transition-colors duration-300">
                         <span class="text-3xl drop-shadow-[0_0_5px_currentColor]">{{ img.emoji }}</span>
                       </div>
-                      <div class="absolute inset-0 bg-cyber-bg/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center backdrop-blur-sm">
-                        <svg class="w-6 h-6 text-cyber-cyan mb-1 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div class="absolute inset-0 bg-cyber-light-surface/80 dark:bg-cyber-bg/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center backdrop-blur-sm">
+                        <svg class="w-6 h-6 text-cyber-purple dark:text-cyber-cyan mb-1 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                         </svg>
-                        <p class="text-cyber-cyan font-mono text-[10px] uppercase font-bold px-3 text-center drop-shadow-[0_0_5px_currentColor]">{{ img.caption }}</p>
+                        <p class="text-cyber-purple dark:text-cyber-cyan font-mono text-[10px] uppercase font-bold px-3 text-center drop-shadow-none dark:drop-shadow-[0_0_5px_currentColor]">{{ img.caption }}</p>
                       </div>
                     </div>
                   </div>
@@ -100,11 +100,11 @@
           <div
             v-for="(project, index) in projects"
             :key="project.name"
-            class="bg-cyber-panel border border-cyber-purple/40 hover:border-cyber-cyan transition-all duration-500 hover:-translate-y-2 animate-fade-in-up relative overflow-hidden group shadow-[0_0_10px_rgba(183,33,255,0.1)] hover:shadow-[0_0_20px_rgba(0,243,255,0.2)] flex flex-col"
+            class="bg-cyber-light-panel dark:bg-cyber-panel border border-cyber-light-border dark:border-cyber-purple/40 hover:border-cyber-purple dark:hover:border-cyber-cyan transition-all duration-500 hover:-translate-y-2 animate-fade-in-up relative overflow-hidden group shadow-[4px_4px_0px_#cbd5e1] dark:shadow-[0_0_10px_rgba(183,33,255,0.1)] hover:shadow-[8px_8px_0px_#94a3b8] dark:hover:shadow-[0_0_20px_rgba(0,243,255,0.2)] flex flex-col"
             :style="{ animationDelay: `${index * 0.1}s` }"
           >
             <!-- Project Thumbnail -->
-            <div class="aspect-video bg-cyber-bg border-b border-cyber-purple/30 flex items-center justify-center relative overflow-hidden">
+            <div class="aspect-video bg-cyber-light-surface dark:bg-cyber-bg border-b border-cyber-light-border dark:border-cyber-purple/30 flex items-center justify-center relative overflow-hidden">
               <img v-if="project.image" :src="project.image" :alt="project.name" class="w-full h-full object-cover filter brightness-75 saturate-50 group-hover:brightness-100 group-hover:saturate-150 transition-all duration-500" />
               <span v-else class="text-5xl group-hover:scale-125 transition-transform duration-500 text-transparent drop-shadow-[0_0_5px_rgba(0,243,255,0.8)]">{{ project.emoji }}</span>
               <div class="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.4)_50%)] bg-[length:100%_4px] pointer-events-none opacity-50"></div>
@@ -113,11 +113,11 @@
 
             <div class="p-6 space-y-4 flex-1 flex flex-col">
               <div class="flex items-start justify-between gap-2">
-                <h3 class="font-display font-bold text-white uppercase tracking-wider group-hover:text-cyber-cyan transition-colors drop-shadow-[0_0_2px_rgba(0,0,0,1)]">{{ project.name }}</h3>
+                <h3 class="font-display font-bold text-cyber-light-text dark:text-white uppercase tracking-wider group-hover:text-cyber-purple dark:group-hover:text-cyber-cyan transition-colors drop-shadow-none dark:drop-shadow-[0_0_2px_rgba(0,0,0,1)]">{{ project.name }}</h3>
                 <span class="px-2 py-0.5 text-[10px] font-mono border border-cyber-pink text-cyber-pink bg-cyber-pink/10 shadow-[0_0_5px_rgba(255,0,85,0.3)] whitespace-nowrap uppercase tracking-widest">{{ project.type }}</span>
               </div>
 
-              <p class="text-sm font-mono text-gray-400 leading-relaxed flex-1 border-l sm border-cyber-surface pl-2">> {{ project.description }}</p>
+              <p class="text-sm font-mono text-gray-600 dark:text-gray-400 leading-relaxed flex-1 border-l sm border-cyber-light-border dark:border-cyber-surface pl-2">> {{ project.description }}</p>
 
               <div class="flex flex-wrap gap-2 pt-2">
                 <span v-for="tech in project.tech" :key="tech" class="text-[10px] font-mono uppercase text-cyber-purple border border-cyber-purple/30 px-1.5 py-0.5">
@@ -125,8 +125,8 @@
                 </span>
               </div>
 
-              <div class="flex gap-4 pt-4 mt-auto border-t border-cyber-purple/20">
-                <a v-if="project.demo" :href="project.demo" target="_blank" class="text-xs font-mono font-bold text-cyber-cyan hover:text-white transition-colors flex items-center gap-2 group/link drop-shadow-[0_0_5px_rgba(0,243,255,0.5)]">
+              <div class="flex gap-4 pt-4 mt-auto border-t border-cyber-light-border dark:border-cyber-purple/20">
+                <a v-if="project.demo" :href="project.demo" target="_blank" class="text-xs font-mono font-bold text-cyber-purple dark:text-cyber-cyan hover:text-cyber-light-text dark:hover:text-white transition-colors flex items-center gap-2 group/link drop-shadow-none dark:drop-shadow-[0_0_5px_rgba(0,243,255,0.5)]">
                   <svg class="w-4 h-4 group-hover/link:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>

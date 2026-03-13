@@ -9,7 +9,10 @@
   }
 
   body {
-    @apply font-sans bg-cyber-bg text-gray-300 antialiased min-h-screen selection:bg-cyber-purple selection:text-white;
+    @apply font-sans antialiased min-h-screen transition-colors duration-500;
+    @apply bg-cyber-light-bg text-cyber-light-text;
+    @apply dark:bg-cyber-bg dark:text-gray-300;
+    @apply selection:bg-cyber-purple selection:text-white;
   }
 
   /* Hide default cursor on desktop/mouse devices */
@@ -42,31 +45,33 @@
 
 @layer components {
   .glass-card {
-    @apply bg-cyber-panel backdrop-blur-md border border-cyber-purple/30 rounded-lg shadow-[0_0_15px_#b721ff1a] hover:shadow-[0_0_20px_#b721ff4d] transition-all duration-300;
+    @apply bg-cyber-light-panel backdrop-blur-md border border-cyber-light-border rounded-lg transition-all duration-300;
+    @apply dark:bg-cyber-panel dark:border-cyber-purple/30 dark:shadow-[0_0_15px_#b721ff1a] dark:hover:shadow-[0_0_20px_#b721ff4d];
   }
 
   .glass-card-solid {
-    @apply bg-cyber-surface border border-cyber-purple/50 rounded-lg shadow-[0_0_10px_#b721ff33];
+    @apply bg-cyber-light-surface border border-cyber-light-border rounded-lg transition-colors duration-300;
+    @apply dark:bg-cyber-surface dark:border-cyber-purple/50 dark:shadow-[0_0_10px_#b721ff33];
   }
 
   .section-title {
-    @apply text-3xl md:text-5xl font-display font-bold text-white mb-2 uppercase tracking-wide tracking-widest drop-shadow-[0_0_8px_#b721ffcc];
+    @apply text-3xl md:text-5xl font-display font-bold text-cyber-light-text dark:text-white mb-2 uppercase tracking-wide tracking-widest drop-shadow-none dark:drop-shadow-[0_0_8px_#b721ffcc];
   }
 
   .section-subtitle {
-    @apply text-base md:text-lg font-mono text-cyber-cyan mb-10 tracking-widest uppercase text-sm drop-shadow-[0_0_5px_#00f3ff80];
+    @apply text-base md:text-lg font-mono text-gray-500 dark:text-cyber-cyan mb-10 tracking-widest uppercase text-sm drop-shadow-none dark:drop-shadow-[0_0_5px_#00f3ff80];
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-cyber-purple/20 border border-cyber-purple text-white font-display font-bold uppercase tracking-widest rounded-sm hover:bg-cyber-purple hover:text-white transition-all duration-300 shadow-[0_0_10px_#b721ff4d] hover:shadow-[0_0_20px_#b721ffcc] hover:animate-glow-pulse;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-cyber-light-panel dark:bg-cyber-purple/20 border border-cyber-purple dark:border-cyber-purple text-cyber-purple dark:text-white font-display font-bold uppercase tracking-widest rounded-sm hover:bg-cyber-purple hover:text-white transition-all duration-300 shadow-[4px_4px_0px_#cbd5e1] dark:shadow-[0_0_10px_#b721ff4d] hover:shadow-[4px_4px_0px_#94a3b8] dark:hover:shadow-[0_0_20px_#b721ffcc] hover:animate-glow-pulse;
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 border border-cyber-cyan text-cyber-cyan font-display font-medium uppercase tracking-widest rounded-sm hover:bg-cyber-cyan/10 hover:shadow-[0_0_15px_#00f3ff66] transition-all duration-300;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 border border-cyber-light-border dark:border-cyber-cyan text-cyber-light-text dark:text-cyber-cyan font-display font-medium uppercase tracking-widest rounded-sm hover:bg-cyber-light-surface dark:hover:bg-cyber-cyan/10 hover:shadow-[4px_4px_0px_#cbd5e1] dark:hover:shadow-[0_0_15px_#00f3ff66] transition-all duration-300;
   }
 
   .badge {
-    @apply inline-flex items-center px-3 py-1 text-xs font-mono rounded-sm border border-cyber-purple/50 bg-cyber-purple/10 text-cyber-purple shadow-[0_0_5px_#b721ff4d];
+    @apply inline-flex items-center px-3 py-1 text-xs font-mono rounded-sm border border-cyber-light-border dark:border-cyber-purple/50 bg-cyber-light-surface dark:bg-cyber-purple/10 text-cyber-purple dark:text-cyber-purple shadow-none dark:shadow-[0_0_5px_#b721ff4d];
   }
 
   .card-hover {
@@ -88,11 +93,17 @@
 
 /* Cyber grid background */
 .bg-gradient-mesh {
-  background-color: #050505;
+  background-color: transparent;
+  background-image:
+    linear-gradient(to right, rgba(183, 33, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(183, 33, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.dark .bg-gradient-mesh {
   background-image:
     linear-gradient(to right, rgba(183, 33, 255, 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(183, 33, 255, 0.05) 1px, transparent 1px);
-  background-size: 50px 50px;
 }
 
 /* ══════════════════════════════════════════════════════════════

@@ -1,5 +1,5 @@
 <template>
-  <footer class="relative mt-24 border-t border-cyber-cyan/30 bg-cyber-bg overflow-hidden flex-shrink-0">
+  <footer class="relative mt-24 border-t border-cyber-light-border dark:border-cyber-cyan/30 bg-cyber-light-surface dark:bg-cyber-bg overflow-hidden flex-shrink-0">
     <!-- Top Decorative Line -->
     <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyber-cyan to-transparent shadow-[0_0_10px_rgba(0,243,255,0.8)]"></div>
     <div class="absolute top-0 left-1/4 w-1/2 h-[1px] bg-cyber-pink blur-sm"></div>
@@ -13,11 +13,11 @@
           <!-- Brand -->
           <div class="space-y-4">
             <a href="#home" class="inline-flex items-center group cursor-pointer" @click.prevent="scrollToSection('home')">
-              <span class="text-2xl font-display font-bold text-white uppercase tracking-widest drop-shadow-[0_0_5px_rgba(0,243,255,0.8)] group-hover:text-cyber-cyan transition-colors duration-300">
+              <span class="text-2xl font-display font-bold text-cyber-light-text dark:text-white uppercase tracking-widest drop-shadow-none dark:drop-shadow-[0_0_5px_rgba(0,243,255,0.8)] group-hover:text-cyber-purple dark:group-hover:text-cyber-cyan transition-colors duration-300">
                 RASAS_AUFAR
               </span>
             </a>
-            <p class="font-mono text-sm text-gray-400 leading-relaxed pl-3 border-l-2 border-cyber-purple drop-shadow-[0_0_2px_rgba(0,0,0,1)]">
+            <p class="font-mono text-sm text-gray-500 dark:text-gray-400 leading-relaxed pl-3 border-l-2 border-cyber-light-border dark:border-cyber-purple drop-shadow-none dark:drop-shadow-[0_0_2px_rgba(0,0,0,1)]">
               > IT Implementation Professional passionate about creating impactful digital solutions and sharing knowledge through publications.
             </p>
           </div>
@@ -53,7 +53,7 @@
                 :href="social.url"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="w-10 h-10 border border-cyber-purple bg-cyber-bg/50 hover:bg-cyber-cyan hover:border-cyber-cyan hover:text-black text-cyber-purple flex items-center justify-center transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,243,255,0.8)] relative group overflow-hidden"
+                class="w-10 h-10 border border-cyber-light-border dark:border-cyber-purple bg-cyber-light-panel dark:bg-cyber-bg/50 hover:bg-cyber-purple dark:hover:bg-cyber-cyan hover:border-cyber-purple dark:hover:border-cyber-cyan hover:text-white dark:hover:text-black text-cyber-purple flex items-center justify-center transition-all duration-300 hover:shadow-[4px_4px_0px_#cbd5e1] dark:hover:shadow-[0_0_15px_rgba(0,243,255,0.8)] relative group overflow-hidden"
                 :title="social.name"
               >
                 <!-- Decorative dot -->
@@ -88,7 +88,7 @@
           <p class="font-mono text-xs uppercase tracking-widest text-gray-500 flex items-center gap-2">
             CONSTRUCTED_WITH 
             <span class="text-cyber-pink animate-pulse">❤</span> 
-            USING <span class="text-white">NUXT</span> & <span class="text-cyber-cyan">TAILWIND</span>
+            USING <span class="text-cyber-light-text dark:text-white">NUXT</span> & <span class="text-cyber-purple dark:text-cyber-cyan">TAILWIND</span>
           </p>
         </div>
       </div>

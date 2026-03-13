@@ -16,7 +16,7 @@
         <div
           v-for="(cert, index) in certificates"
           :key="cert.name"
-          class="bg-cyber-panel border border-cyber-purple/40 hover:border-cyber-cyan transition-all duration-500 hover:-translate-y-2 animate-fade-in-up relative overflow-hidden group shadow-[0_0_10px_rgba(183,33,255,0.1)] hover:shadow-[0_0_20px_rgba(0,243,255,0.2)] flex flex-col"
+          class="bg-cyber-light-panel dark:bg-cyber-panel border border-cyber-light-border dark:border-cyber-purple/40 hover:border-cyber-purple dark:hover:border-cyber-cyan transition-all duration-500 hover:-translate-y-2 animate-fade-in-up relative overflow-hidden group shadow-[4px_4px_0px_#cbd5e1] dark:shadow-[0_0_10px_rgba(183,33,255,0.1)] hover:shadow-[4px_4px_0px_#94a3b8] dark:hover:shadow-[0_0_20px_rgba(0,243,255,0.2)] flex flex-col"
           :style="{ animationDelay: `${index * 0.1}s` }"
         >
           <!-- Stylized Corner Accent -->
@@ -25,7 +25,7 @@
           </div>
 
           <!-- Certificate Visual -->
-          <div class="relative h-44 overflow-hidden bg-cyber-bg border-b border-cyber-purple/30 group-hover:border-cyber-cyan/50 transition-colors duration-300">
+          <div class="relative h-44 overflow-hidden bg-cyber-light-surface dark:bg-cyber-bg border-b border-cyber-light-border dark:border-cyber-purple/30 group-hover:border-cyber-purple dark:group-hover:border-cyber-cyan/50 transition-colors duration-300">
             <!-- Decorative Pattern -->
             <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
               <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,243,255,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,243,255,0.1)_1px,transparent_1px)] bg-[size:10px_10px]"></div>
@@ -40,51 +40,51 @@
             <!-- Certificate Icon / Logo -->
             <div class="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
               <div 
-                class="flex items-center justify-center group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500 relative bg-black/50 p-2 rounded-lg border border-cyber-purple/30 shadow-[0_0_15px_rgba(183,33,255,0.2)] backdrop-blur-sm" 
+                class="flex items-center justify-center group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500 relative bg-cyber-light-surface/50 dark:bg-black/50 p-2 rounded-lg border border-cyber-light-border dark:border-cyber-purple/30 shadow-[4px_4px_0px_#e2e8f0] dark:shadow-[0_0_15px_rgba(183,33,255,0.2)] backdrop-blur-sm" 
                 :class="cert.image ? 'w-24 h-24' : 'w-16 h-16'"
               >
                 <img v-if="cert.image" :src="cert.image" :alt="cert.name" class="w-full h-full object-contain filter brightness-90 group-hover:brightness-110 saturate-50 group-hover:saturate-150 transition-all duration-500" />
-                <span v-else class="text-3xl drop-shadow-[0_0_5px_rgba(0,243,255,0.8)] group-hover:animate-pulse">{{ cert.emoji }}</span>
+                <span v-else class="text-3xl drop-shadow-none dark:drop-shadow-[0_0_5px_rgba(0,243,255,0.8)] group-hover:animate-pulse">{{ cert.emoji }}</span>
               </div>
             </div>
 
             <!-- Issue Date Badge -->
-            <div class="absolute bottom-2 left-2 z-20 flex items-center gap-1.5 px-2 py-1 bg-cyber-bg/80 border border-cyber-purple/50 shadow-[0_0_5px_rgba(183,33,255,0.3)] backdrop-blur-md font-mono">
-              <span class="text-[10px] text-cyber-cyan animate-pulse">●</span>
-              <span class="text-[10px] font-bold text-gray-300 tracking-widest uppercase">{{ cert.year }}</span>
+            <div class="absolute bottom-2 left-2 z-20 flex items-center gap-1.5 px-2 py-1 bg-cyber-light-surface/80 dark:bg-cyber-bg/80 border border-cyber-light-border dark:border-cyber-purple/50 shadow-none dark:shadow-[0_0_5px_rgba(183,33,255,0.3)] backdrop-blur-md font-mono">
+              <span class="text-[10px] text-cyber-purple dark:text-cyber-cyan animate-pulse">●</span>
+              <span class="text-[10px] font-bold text-cyber-light-text dark:text-gray-300 tracking-widest uppercase">{{ cert.year }}</span>
             </div>
           </div>
 
           <!-- Certificate Info -->
           <div class="p-6 flex-1 flex flex-col space-y-3">
-            <h3 class="font-display font-bold text-white uppercase tracking-wider group-hover:text-cyber-cyan transition-colors duration-300 drop-shadow-[0_0_2px_rgba(0,0,0,1)] text-sm line-clamp-2" :title="cert.name">
+            <h3 class="font-display font-bold text-cyber-light-text dark:text-white uppercase tracking-wider group-hover:text-cyber-purple dark:group-hover:text-cyber-cyan transition-colors duration-300 drop-shadow-none dark:drop-shadow-[0_0_2px_rgba(0,0,0,1)] text-sm line-clamp-2" :title="cert.name">
               {{ cert.name }}
             </h3>
             
-            <p class="text-xs font-mono text-cyber-purple uppercase tracking-widest flex items-center gap-2 border-l border-cyber-purple/50 pl-2">
+            <p class="text-xs font-mono text-gray-500 dark:text-cyber-purple uppercase tracking-widest flex items-center gap-2 border-l border-cyber-light-border dark:border-cyber-purple/50 pl-2">
               <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
               {{ cert.issuer }}
             </p>
             
-            <p class="text-xs font-mono text-gray-400 leading-relaxed flex-1">> {{ cert.description }}</p>
+            <p class="text-xs font-mono text-gray-600 dark:text-gray-400 leading-relaxed flex-1">> {{ cert.description }}</p>
 
             <!-- Score Highlight -->
             <div v-if="cert.score" class="inline-flex mt-2">
-              <div class="px-2 py-1 bg-cyber-pink/10 border border-cyber-pink/50 flex items-center gap-1.5 shadow-[0_0_5px_rgba(255,0,85,0.2)]">
+              <div class="px-2 py-1 bg-cyber-pink/10 border border-cyber-pink/50 flex items-center gap-1.5 shadow-none dark:shadow-[0_0_5px_rgba(255,0,85,0.2)]">
                 <span class="text-[10px] font-mono font-bold text-cyber-pink uppercase tracking-widest">SCORE: {{ cert.score }}</span>
               </div>
             </div>
 
             <!-- Skills Tags -->
             <div v-if="cert.skills && cert.skills.length > 0" class="flex flex-wrap gap-1.5 pt-2">
-              <span v-for="skill in cert.skills" :key="skill" class="px-1.5 py-0.5 text-[9px] font-mono uppercase bg-cyber-purple/10 text-cyber-cyan border border-cyber-purple/40 shadow-[0_0_3px_rgba(183,33,255,0.2)] whitespace-nowrap">
+              <span v-for="skill in cert.skills" :key="skill" class="px-1.5 py-0.5 text-[9px] font-mono uppercase bg-cyber-light-surface dark:bg-cyber-purple/10 text-cyber-purple dark:text-cyber-cyan border border-cyber-light-border dark:border-cyber-purple/40 shadow-none dark:shadow-[0_0_3px_rgba(183,33,255,0.2)] whitespace-nowrap">
                 #{{ skill }}
               </span>
             </div>
 
-            <div class="pt-4 mt-auto border-t border-cyber-purple/20 flex items-center justify-between gap-2">
+            <div class="pt-4 mt-auto border-t border-cyber-light-border dark:border-cyber-purple/20 flex items-center justify-between gap-2">
               <div v-if="cert.id" class="flex items-center gap-1.5 min-w-0 font-mono" :title="`Credential ID: ${cert.id}`">
                 <span class="text-cyber-purple text-[10px]">></span>
                 <span class="text-[10px] text-gray-500 truncate uppercase">{{ cert.id }}</span>

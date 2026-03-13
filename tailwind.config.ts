@@ -2,6 +2,7 @@ import type { Config } from 'tailwindcss'
 import plugin from 'tailwindcss/plugin'
 
 export default <Config>{
+    darkMode: 'class',
     content: [
         './app/components/**/*.{vue,js,ts}',
         './app/layouts/**/*.vue',
@@ -20,6 +21,11 @@ export default <Config>{
                     cyan: '#00f3ff',
                     'cyan-glow': 'rgba(0, 243, 255, 0.5)',
                     pink: '#ff0055',
+                    'light-bg': '#f8fafc',
+                    'light-surface': '#f1f5f9',
+                    'light-panel': 'rgba(241, 245, 249, 0.8)',
+                    'light-text': '#0f172a',
+                    'light-border': '#cbd5e1'
                 }
             },
             fontFamily: {
