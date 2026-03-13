@@ -19,7 +19,7 @@
               Rasas Aufar
             </h1>
             <h2 class="text-2xl sm:text-3xl font-mono font-light text-cyber-light-text dark:text-cyber-cyan uppercase tracking-widest border-l-4 border-cyber-light-border dark:border-cyber-purple pl-4">
-              IT Implementation Professional
+              IT Implementation Professional.
             </h2>
           </div>
 
