@@ -1,7 +1,8 @@
 <template>
-  <section id="publication" class="py-24 relative overflow-hidden">
+  <section id="publication" class="pt-24 pb-12 relative overflow-hidden">
     <!-- Decorative background -->
     <div class="absolute bottom-0 left-0 w-full h-[500px] bg-[linear-gradient(transparent_0%,rgba(0,243,255,0.05)_100%)] pointer-events-none"></div>
+    <div class="absolute top-1/2 left-0 w-64 h-64 bg-cyber-cyan/5 rounded-full blur-[100px] pointer-events-none"></div>
 
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <!-- Section Header -->

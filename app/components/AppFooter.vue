@@ -1,5 +1,5 @@
 <template>
-  <footer class="relative mt-24 border-t border-cyber-light-border dark:border-cyber-cyan/30 bg-cyber-light-surface dark:bg-cyber-bg overflow-hidden flex-shrink-0">
+  <footer class="relative border-t border-cyber-light-border dark:border-cyber-cyan/30 bg-cyber-light-surface/50 dark:bg-cyber-bg/50 backdrop-blur-xl bg-gradient-mesh overflow-hidden flex-shrink-0">
     <!-- Top Decorative Line -->
     <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyber-cyan to-transparent shadow-[0_0_10px_rgba(0,243,255,0.8)]"></div>
     <div class="absolute top-0 left-1/4 w-1/2 h-[1px] bg-cyber-pink blur-sm"></div>
@@ -7,7 +7,7 @@
     <!-- Scanline Overlay -->
     <div class="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.5)_50%)] bg-[length:100%_4px] pointer-events-none opacity-30 z-0"></div>
 
-    <div class="relative z-10 pt-16 pb-8 bg-gradient-to-b from-transparent to-cyber-purple/10">
+    <div class="relative z-10 pt-8 pb-8 bg-gradient-to-b from-transparent to-cyber-purple/10">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
           <!-- Brand -->
